@@ -14,12 +14,20 @@
  *= require_self
  */
 /* forms */
+*  { 
+    border: 1px solid rgb(230, 173, 173);
+    width: 100%;
+    margin: 15px;
+    
+}
+
+
 
 input, textarea, select, .uneditable-input {
-    border: 1px solid #bbb;
+    border: 1px solid rgb(48, 103, 129);
     width: 100%;
     margin-bottom: 15px;
-    @include box_sizing;
+    
   }
   
   input {

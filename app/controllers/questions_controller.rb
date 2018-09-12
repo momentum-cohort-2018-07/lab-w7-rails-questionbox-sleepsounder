@@ -12,16 +12,23 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @question = Question.new(question_params)
+    if @question.save 
+      redirect_to root_path
+    else
+      render 'new'
   end
+end
 
   def destroy
+    @question = Question.delete
   end
 
 
   private 
 
   def question_params
-    params.require(:question).permit(:title, :body, :user_id)
+    params.permit(:title, :body, :user_id)
   end
 
 
