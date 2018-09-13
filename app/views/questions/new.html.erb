@@ -6,4 +6,5 @@
     <%= form.label :body %>
     <%= form.text_area :body %>
     <%= form.submit %>
+    <%= form.hidden_field :username, :value => current_user.username %>
 <% end %>

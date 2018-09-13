@@ -8,10 +8,12 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    redirect_to new_session_path, notice: 'You must be logged in to add a story' if !current_user
     @question = Question.new
   end
 
   def create
+    puts 'sup questions create action!***********************'
     @question = Question.new(question_params)
     if @question.save 
       redirect_to root_path

@@ -1,5 +1,3 @@
-<h3>Please Login To Continue</h3>
-
 <% if flash[:notice] %>
 <p class="alert alert-success"><%= flash[:notice] %></p>
 <% end %>
@@ -14,6 +12,6 @@
     <%=submit_tag "Log in" %>
 <% end %>
 
-<h4>New User? Create a GCR Q&A Account!</h4>
+<h4>New User? Create a GCR Q&A Account, yo.</h4>
 
 <button><%= link_to 'Create Account', new_user_path %></button>
