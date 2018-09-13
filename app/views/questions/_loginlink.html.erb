@@ -1,0 +1,16 @@
+<div class="right_side_wrapper">
+    <div id="rs_module_1" class="rs_modules"><%# If logged in, User info here ? %>
+      <div id="rsm1_header" class="rsm_header white_link">User info
+      </div>
+      <div id="rsm1_body" class="rsm_body">
+        <% if current_user %>
+            <ul>
+                <li>Username: <%= current_user.username %></li>
+                <li>Name: <%= current_user.name %></li>
+                <li>Email: <%= current_user.email %></li>
+            </ul>
+        <% else %>
+            Please <%= link_to 'Log In', new_session_path, { :class=>"text-right text-white btn btn-secondary text-white"} %> to see your user info
+        <% end %>
+      </div>
+    </div>

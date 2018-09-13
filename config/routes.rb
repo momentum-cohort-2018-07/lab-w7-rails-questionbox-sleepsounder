@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-      resources :users, only: [:new, :create] do
+      resources :users do
         root 'questions#index'
           resources :questions do
             resources :answers do
