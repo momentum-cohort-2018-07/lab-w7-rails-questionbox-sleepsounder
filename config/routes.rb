@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :questions do
         get 'answers/new'
         get 'answers/create'
-        get 'answers/edit'
+        get 'answers/show'
         get 'answers/delete'
               
       
