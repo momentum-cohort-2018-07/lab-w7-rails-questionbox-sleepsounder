@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
-    
+  
+  
+
   resources :users
   
   resource :session, only: [:new, :create, :destroy]
   
   root 'questions#index'
     resources :questions do
-      resources :answers do
+        get 'answers/new'
+        get 'answers/create'
+        get 'answers/edit'
+        get 'answers/delete'
               
       
-      end
     end
     
   
