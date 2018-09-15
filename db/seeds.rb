@@ -16,11 +16,13 @@
 #   )
 # end
 
+Question.delete_all
 
 35.times do
     Question.create!(
       title: Faker::RockBand.name,
       body: Faker::BackToTheFuture.quote,
-      user_id: 56
+      user_id: 56,
+      username: 'Supah Fixer'
     )
   end

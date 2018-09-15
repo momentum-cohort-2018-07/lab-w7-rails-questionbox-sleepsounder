@@ -1,10 +1,10 @@
-<h1>Questions#new</h1>
-
-<%= form_with url: user_questions_path, local: true do |form| %>
+<% puts 'Sup! new questions form ************************' %>
+<%= form_with model: @question, local:true do |form| %>
     <%= form.label :title%>
     <%= form.text_field :title %>
     <%= form.label :body %>
     <%= form.text_area :body %>
     <%= form.submit %>
     <%= form.hidden_field :username, :value => current_user.username %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
 <% end %>
