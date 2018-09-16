@@ -1,5 +1,4 @@
 <%= form_with model: [@question, @answer], local: true do |f| %>
-  puts "Hiy-ee answers form partial!*******************"
   <%= f.hidden_field :user_id, value: current_user.id %>
   <p>
   <%= f.label :solution %>
