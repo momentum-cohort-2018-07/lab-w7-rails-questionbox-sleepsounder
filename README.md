@@ -31,3 +31,7 @@ You'll need to configure a storage backend like Amazon S3 in order to upload fil
 To send email from your production app you'll need an add-on for Heroku (e.g. SendGrid, MailGun, or SparkPost).
 Send an email to a user to reset their password if they have forgotten it, and allow them to reset it.
 What else would make this application better? 🤔
+
+
+
+

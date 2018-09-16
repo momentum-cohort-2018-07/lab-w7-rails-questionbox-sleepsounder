@@ -10,48 +10,14 @@
 <strong>Body:</strong>
 <%= @question.body %>
 </p>
+<p>
+<%= link_to "New Answer", new_question_answer_path(@question) %>
+</p>
 
-<div>
-        <h6>Answers</h6>
-        <% @question.answers.each do |answer| %>
-          <div class="">
-            <ul>
-                <li>
-                  <p><%= "User: #{answer.username}"%></p>
-                  <p><%= answer.text %></p>
-                  <% date = Time.now%>
-                  <%total = date - answer.created_at%>
-                  <% if total <=1800 then
-                       diff = (total / 1.second).round
-                       message = "seconds ago"
-                     elsif total > 1800 && total < 3600
-                       diff = (total / 1.minute).round
-                       message = "minutes ago"
-                     elsif total > 3600 && total < 86340
-                       diff = (total / 1.hour).round
-                       message = "hours ago"
-                     elsif total >= 86341
-                       diff = (total / 1.day).round
-                       message = "days ago"
-                     end %>
-                  <p><%= "Submitted: #{diff} " + message %></p>>
-                  <% if !answer.answers.empty? %>
-                    <ul>
-                        <% answer.answers.each do |reply|%>
-                        <li>
-                            <p><%= "User: #{reply.username}"%></p>
-                            <p><%= reply.text%></p>
-                        </li>
-                        <%end%>
-                    </ul>
-                <%end%>
-               
-                </li>
-            </ul>
-          </div>
-        <%end%>
-        <%= render partial: "answer", locals: { answerable: answer, question_id: @question.id } %>
-</div>
-
-  
 <%= link_to'Back', root_path %>
+
+
+
+
+
+
