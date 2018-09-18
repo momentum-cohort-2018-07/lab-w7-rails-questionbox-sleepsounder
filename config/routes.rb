@@ -12,11 +12,13 @@ Rails.application.routes.draw do
     root 'questions#index'
     
   namespace :api do 
-    resource :session, only: [:create]
-    get 'index', to: 'users#index'
-    resources :users, only: [:index, :create, :update, :show, :destroy]
-    resources :questions, except: [:new, :update, :edit] do 
-      resources :answers, except: [:new, :edit]
+    namespace :v1 do 
+      resource :session, only: [:create]
+      get 'index', to: 'users#index'
+      resources :users, only: [:index, :create, :update, :show, :destroy]
+      resources :questions, except: [:new, :update, :edit] do 
+        resources :answers, except: [:new, :edit]
+      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
