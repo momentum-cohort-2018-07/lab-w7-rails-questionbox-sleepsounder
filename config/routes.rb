@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resource :session, only: [:create]
       get 'index', to: 'users#index'
+      get 'questions', to: 'questions#index'
       resources :users, only: [:index, :create, :update, :show, :destroy]
       resources :questions, except: [:new, :update, :edit] do 
         resources :answers, except: [:new, :edit]
