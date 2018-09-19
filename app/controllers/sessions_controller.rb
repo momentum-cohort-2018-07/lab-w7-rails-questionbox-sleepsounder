@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-    def new
+  skip_before_action :verify_authentication
+
+  def new
     end
   
     def create

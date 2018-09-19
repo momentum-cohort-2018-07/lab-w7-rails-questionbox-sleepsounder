@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  skip_before_action :verify_authentication
+  
   def index
     @questions = Question.page(params[:page])
   end

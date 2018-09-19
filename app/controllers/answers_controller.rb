@@ -1,5 +1,7 @@
 class AnswersController < ApplicationController
+  skip_before_action :verify_authentication
   before_action :set_answer, only: [:edit, :destroy]
+  
   def new
     if current_user
       @answer = Answer.new

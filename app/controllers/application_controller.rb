@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :verify_authentication
+  protect_from_forgery with: :null_session
+  helper_method :api_token_user
   
   
   def verify_authentication
     unless api_token_user
-      render json: {error: "You don't have permission to access these resources"}, status: :unauthorized
+      render json: {error: "You don't have permission to access these resources, yo."}, status: :unauthorized
     end
   end
 
