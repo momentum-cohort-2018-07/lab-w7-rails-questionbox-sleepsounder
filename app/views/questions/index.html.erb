@@ -8,7 +8,7 @@
           <div class="col-sm"><%= question.title %></div>
           <div class="col-sm"><%= question.body %></div>
           <div class="col-sm"><%= link_to 'Show', question %></div>
-
+          <div class="col-sm"><%= link_to 'Delete', question_path(question), method: :delete %></div>
         </div>
       <% end %>
   </div>

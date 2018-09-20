@@ -2,14 +2,18 @@ Rails.application.routes.draw do
   
   
 
+  get 'reports/create'
+  get 'reports/show'
+  get 'reports/new'
   resources :users
   resource :session, only: [:new, :create, :destroy]
+  resources :reports, only: [:new, :create, :show]
   
 
-    resources :questions, except: [:update, :edit]  do
+  resources :questions, except: [:update, :edit]  do
       resources :answers
-    end
-    root 'questions#index'
+  end
+  root 'questions#index'
     
   namespace :api do 
     namespace :v1 do 

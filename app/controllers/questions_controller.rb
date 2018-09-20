@@ -26,7 +26,8 @@ class QuestionsController < ApplicationController
 end
 
   def destroy
-    @question = Question.delete
+    @question(params[:question_id]).destroy
+      redirect_to root_path
   end
 
 
@@ -35,6 +36,10 @@ end
   def question_params
     params.require(:question).permit(:title, :body, :user_id, :username, :answer_id)
   end
+
+  # def question_params2
+  #   params.permit(:id, :title, :body, :user_id, :username, :answer_id)
+  # end
 
 
 
