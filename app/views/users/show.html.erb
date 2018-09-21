@@ -1,0 +1,12 @@
+<h1>Users#show</h1>
+
+<%= link_to 'New Question', action='/users/:user_id/questions/new' %>
+
+<div class="container user_list">
+<% @user.id %>
+  <div>
+    <div class="col-sm"><%= @user.username %></div>
+    <div class="col-sm"><%= @user.email %></div>
+  </div>
+
+

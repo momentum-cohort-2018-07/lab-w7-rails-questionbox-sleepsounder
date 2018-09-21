@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LabW7RailsQuestionboxSleepsounder</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+</html>
+
+
+  <body>
+    <% if current_user %>
+      <div class="logged_banner logged_in navbar navbar-expand-lg navbar-dark bg-dark">
+        <div id="logo_block" class="logo_cell"><h2><%= link_to "GCR Q&A", root_path %></h2></div>
+        <%= link_to 'Log out', session_path, method: :delete, :class=>"text-right text-white btn btn-secondary text-white"  %>
+        <div class="btn btn-primary">Welcome, <%= current_user.username %></div>
+      </div>
+    <% else %>
+      <div class="logged_banner white_link logged_out">
+        <div id="logo_block" class="logo_cell"><h2><%= link_to "GCR Q&A", root_path %></h2></div>
+        <%= link_to 'Sign Up', new_user_path, { :class=>"text-right text-white btn btn-secondary text-white"} %> | 
+        <%= link_to 'Log In', new_session_path, { :class=>"text-right text-white btn btn-secondary text-white"} %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
+

@@ -1,0 +1,19 @@
+<%= render 'loginlink' %>
+<%= link_to 'New Question', action='/questions/new' %>
+
+<div>
+  <div class="container questions_list">
+      <% @questions.each do |question| %>
+        <div class= "row question_entry mt-1">
+          <div class="col-sm"><%= question.title %></div>
+          <div class="col-sm"><%= question.body %></div>
+          <div class="col-sm"><%= link_to 'Show', question %></div>
+          <div class="col-sm"><%= link_to 'Delete', question_path(question), method: :delete %></div>
+        </div>
+      <% end %>
+  </div>
+
+  <%= paginate @questions %>
+<%= page_entries_info @questions %>
+ 
+</div>
