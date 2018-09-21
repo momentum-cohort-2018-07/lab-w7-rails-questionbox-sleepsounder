@@ -26,8 +26,9 @@ class QuestionsController < ApplicationController
 end
 
   def destroy
-    @question(params[:question_id]).destroy
-      redirect_to root_path
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to root_path
   end
 
 
